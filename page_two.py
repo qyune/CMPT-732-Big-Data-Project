@@ -32,8 +32,8 @@ engine = create_engine(
 
 def main():
     temperature_df = spark.read.format('csv').options(header='true', schema='observation_schema') \
-        .option("mode", "DROPMALFORMED").load("GlobalLandTemperaturesByCity.csv")
-    # .option("mode", "DROPMALFORMED").load("s3://climate-data-732/GlobalLandTemperaturesByCity.csv")
+        .option("mode", "DROPMALFORMED").load("s3://climate-data-732/GlobalLandTemperaturesByCity.csv")
+        # .option("mode", "DROPMALFORMED").load("GlobalLandTemperaturesByCity.csv")
 
     temperature_df.createOrReplaceTempView("temperature_view")
     temperature_df = spark.sql("SELECT dt, AverageTemperature, City, Country "
