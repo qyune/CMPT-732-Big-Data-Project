@@ -1,10 +1,12 @@
-# Game Tweets and Sales: Texting Mining Project using Big Data Technologies
+# Flood and Global Warming: Visualization and Prediction
 
 ## Team members:
 Pengyu Wang & Kyoun Huh
 
 ## Introduction
-This project aims to gain meaningful insights from online discussions about video games. Text mining techniques and NLP algorithms will be applied, which may include but not limited to: sentiment analysis through time and keyword extraction for each game genre. In addition, unstructured text data will be processed and joined with game sales data, which are tabular data in traditional relational formats. Machine learning models will be built to predict first month sales for games, based on the online discussion one month before their launches. The ideal model should be interpretable, which means users could not only see the predicted sales numbers but also obtain explainable feature importance, i.e. which words in discussion may indicate high sales. The results of analysis will be demonstrated by a one-page visualization dashboard and a report.
+As a common type of disaster, flood claimed lives and damaged properties throughout history. Notwithstanding the frequent occurrences of floods, our society is still underprepared while facing these disasters. To study the features and patterns of floods could help save lives and minimize economic losses.
+
+With the power of big data technologies, this project aims to study the main floods all over the world since 1985. We present their locations and severities, examine the common causes of floods and how these causes changed through decades. Given the context of global warming, we also present how the temperatures have been changed in different areas of the world. Then, we attempt to link the temperature changes to flood occurrences. In addition to exploring the correlation between temperature and flood, a machine learning model is built to predict probabilities of floods based on historical temperature records. The final results of this project are presented by a visualization dashboard and a report.
 
 ## Project Outline
 Data Acquisition – Data Wrangling + ETL – Machine Learning – Visualization
@@ -15,16 +17,13 @@ Data Acquisition – Data Wrangling + ETL – Machine Learning – Visualization
 3. Prediction model
 
 ## Data Sources
-Game Discussion: Data obtained from Twitter API.
-Game Sales: Data crawled from VGChartz. See https://www.vgchartz.com/weekly/
+Flood Data: Global Active Archive of Large Flood Events, Dartmouth Flood Observatory, University of Colorado.
+Temperature Data: Earth Surface Temperature, Berkeley Earth.
 
 
 ## Technologies
-Cloud Computing: AWS
-Data Storage: HDFS + databases to be decided
-Data Wrangling + ETL: Apache Spark
-Machine Learning: Spark MLlib
-Visualization: Plotly
-Crawling: BeautifulSoup
+Data Storage: AWS S3 + AWS RDS (PostgreSQL)
+ETL: PySpark on AWS EMR
+Machine Learning: Spark ML
+Visualization: Plotly + Heroku
 Version control: GitHub
-Other possible technologies: Docker, Airflow
