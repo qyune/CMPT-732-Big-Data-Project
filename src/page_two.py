@@ -104,7 +104,7 @@ def main():
 
 
 if __name__ == '__main__':
-    spark = SparkSession.builder.appName('correlate logs').getOrCreate()
+    spark = SparkSession.builder.appName('Worlds Temperature').getOrCreate()
     assert spark.version >= '2.4'  # make sure we have Spark 2.4+
     spark.sparkContext.setLogLevel('WARN')
     sc = spark.sparkContext
