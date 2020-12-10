@@ -65,4 +65,5 @@ if __name__ == '__main__':
     engine = create_engine(
         'postgresql+psycopg2://postgres:Aws_2020@database-1.cwfbooless1u.us-east-1.rds.amazonaws.com:5432/postgres')
     p_matrix.to_sql('graph_3_2', engine, if_exists='replace')
+    model.write().overwrite().save("s3://climate-data-732/bcmodel_by_temperature")
 
