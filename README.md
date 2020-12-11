@@ -24,8 +24,8 @@ Temperature Data: Earth Surface Temperature, Berkeley Earth.
 
 
 ## Technologies
-Data Storage: AWS S3 + AWS RDS (PostgreSQL).
-ETL: PySpark on AWS EMR.
-Machine Learning: Spark ML.
-Visualization: Plotly Dash + Heroku.
-Version control: GitHub
+- Data Storage: AWS S3 + AWS RDS (PostgreSQL)
+- ETL: PySpark on AWS EMR
+- Machine Learning: Spark ML
+- Visualization: Plotly Dash + Heroku
+- Version control: GitHub
