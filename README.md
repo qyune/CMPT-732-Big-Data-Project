@@ -1,9 +1,9 @@
-## [Flood and Global Warming Visualization Dashboard](https://floods-detection.herokuapp.com/apps/floods)
-
 # Flood and Global Warming: Visualization and Prediction
 
 ## Team members:
 Pengyu Wang & Kyoun Huh
+
+## [Flood and Global Warming Visualization Dashboard](https://floods-detection.herokuapp.com/apps/floods)
 
 ## Introduction
 As a common type of disaster, flood claimed lives and damaged properties throughout history. Notwithstanding the frequent occurrences of floods, our society is still underprepared while facing these disasters. To study the features and patterns of floods could help save lives and minimize economic losses.
