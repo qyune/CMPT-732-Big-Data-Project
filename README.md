@@ -1,3 +1,6 @@
+http://github.com - automatic!
+[GitHub](http://github.com)
+
 # Flood and Global Warming: Visualization and Prediction
 
 ## Team members:
