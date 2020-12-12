@@ -41,8 +41,10 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
 2. Create an AWS EMR clsuter with configuring the applications Spark 3.0.1 and Zeppelin 0.9.0.
    - Hardware : Clusters with 1 master node with 2 core nodes with same specification of 4 vCore, 16 GiB memory(m5.xlarge).
    Using more cluster resources could be encouraged to puruse better performance. 
-3. After we create the cluster, several third-party pacakges below we deployed in our project need to be installed on the cluster.
-   - pandas, boto3, psycopg2-binary, sqlalchemy, country-converter, pycountry-convert
+3. After we create the cluster, several third-party pacakges we deployed in our project need to be installed on the cluster.
+   - We could use bootstrpping to install below packages
+   (pandas, boto3, psycopg2-binary, sqlalchemy, country-converter, pycountry-convert)
+   
 4. Now you can access to the cluster through AWS CLI with your 'EC2 key pair'.
 6. In the cluster console, we can use'spark-submit' command to run the source file stored in the S3 or we can also run it in the Zeppelin environment.
 
