@@ -18,6 +18,7 @@ if __name__ == '__main__':
     df = spark.read.option("header", "true").csv("s3://climate-data-732/ghch_temp_1985_2020.csv")
     station_annual_df = df.groupby('station', 'year').agg({'value': 'avg'}).withColumnRenamed('avg(value)',
                                                                                               'AverageTemperature')
+    sc = spark.sparkContext
     station_rdd = sc.textFile("s3://noaa-ghcn-pds/ghcnd-stations.txt")
     station_rdd = station_rdd.map(lambda x: (x[0:11], x[12:20], x[21:30]))
     station_df = spark.createDataFrame(station_rdd, station_schema)
