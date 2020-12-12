@@ -42,7 +42,7 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
    - Hardware : Clusters with 1 master node with 2 core nodes with same specification of 4 vCore, 16 GiB memory(m5.xlarge).
    Using more cluster resources could be encouraged to puruse better performance. 
 3. After we create the cluster, several third-party pacakges we deployed in our project need to be installed on the cluster.
-   - We could use bootstrpping to install packages
+   - We could use bootstrapping to install those packages when launching the cluster
    (pandas, boto3, psycopg2-binary, sqlalchemy, country-converter, pycountry-convert)
    
 4. Now you can access to the cluster through AWS CLI with your 'EC2 key pair'.
