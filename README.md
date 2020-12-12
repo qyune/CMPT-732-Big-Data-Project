@@ -1,5 +1,5 @@
 # Flood and Global Warming: Visualization and Prediction
-## [Flood and Global Warming Visualization Dashboard](https://floods-detection.herokuapp.com/apps/floods)
+## Dashboard Link [Flood and Global Warming Visualization Dashboard](https://floods-detection.herokuapp.com/apps/floods)
 
 ## Team members:
 Pengyu Wang & Kyoun Huh
