@@ -32,6 +32,7 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
 ## Operating instruction
 - Our project consists of AWS part for data preocessing and web application (Plotly Data with Heroku) part for visualizaion.
 - In 'src' directory, all the spark codes we worked on AWS EMR cluster are stored.
+- Code running sequence for data processing: ghcn_etl.py -> page_one.py -> page_two_GHCN.py -> page_two_continent.py -> page_three.py ->  ml_model.py
 - In 'flood-detection' directory, you can find all the dashboard related codes and requirements.
 
 - Here are the simple description to operate our data processing part in AWS EMR.
@@ -44,5 +45,6 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
    - pandas, boto3, psycopg2-binary, sqlalchemy, country-converter, pycountry-convert
 4. Now you can access to the cluster through AWS CLI with your 'EC2 key pair'.
 6. In the cluster console, we can use'spark-submit' command to run the source file stored in the S3 or we can also run it in the Zeppelin environment.
+
 
    
