@@ -19,7 +19,7 @@ Data Acquisition – Data Wrangling + ETL – Machine Learning – Visualization
 
 ## Data Sources
 Flood Data: Global Active Archive of Large Flood Events, Dartmouth Flood Observatory, University of Colorado.
-Temperature Data: Earth Surface Temperature, Berkeley Earth.
+Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by NOAA (National Centers for Environmental Information) 
 
 
 ## Technologies
