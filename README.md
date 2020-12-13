@@ -36,7 +36,7 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
 - In 'floods-detection' directory, you can find all the dashboard related codes and requirements.
 
 - Here are the simple description to operate our data processing part in AWS EMR.
-1. Create an AWS S3 buckets for the storage named as'clitmate-data-732' and load the 'FloodArchiveRaw.csv' for our floods data.
+1. Create an AWS S3 buckets for the storage named as'clitmate-data-732' and load the 'FloodArchiveRaw.csv' and 'country_dict.json' into the bucket.
    For average temperature datasets, we used S3 open data directly from https://noaa-ghcn-pds.s3.amazonaws.com/index.html#csv/.
 2. Create an AWS EMR clsuter with configuring the applications Spark 3.0.1 and Zeppelin 0.9.0.
    - Hardware : Clusters with 1 master node with 2 core nodes with same specification of 4 vCore, 16 GiB memory(m5.xlarge).
