@@ -33,7 +33,7 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
 - Our project consists of AWS part for data preocessing and web application (Plotly Data with Heroku) part for visualizaion.
 - In 'src' directory, all the spark codes we worked on AWS EMR cluster are stored.
 - Code running sequence for data processing: ghcn_etl.py -> page_one.py -> page_two_GHCN.py -> page_two_continent.py -> page_three.py ->  ml_model.py
-- In 'flood-detection' directory, you can find all the dashboard related codes and requirements.
+- In 'floods-detection' directory, you can find all the dashboard related codes and requirements.
 
 - Here are the simple description to operate our data processing part in AWS EMR.
 1. Create an AWS S3 buckets for the storage named as'clitmate-data-732' and load the 'FloodArchiveRaw.csv' for our floods data.
