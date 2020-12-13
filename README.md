@@ -47,7 +47,7 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
    
 4. Now you can access to the cluster through AWS CLI with your 'EC2 key pair'.
 6. In the cluster console, we can use'spark-submit' command to run the source file stored in the S3 or we can also run it in the Zeppelin environment.
-7. A produced '.csv' dataset from running 'ghcn_etl.py' will be stored in S3 and that would be the input source for the other processing codes.
+7. The output '.csv' file from running 'ghcn_etl.py' will be stored in S3 and that would be the input source for the other processing codes.
 
 
    
