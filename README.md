@@ -19,7 +19,7 @@ Data Acquisition – Data Wrangling + ETL – Machine Learning – Visualization
 
 ## Data Sources
 Flood Data: Global Active Archive of Large Flood Events, Dartmouth Flood Observatory, University of Colorado.
-Temperature Data: Global Historical Climatology Network Daily (GHCN-D), NOAA (National Oceanic and Atmospheric Administration) 
+Temperature Data: Global Historical Climatology Network Daily (GHCN-D), NOAA (National Oceanic and Atmospheric Administration).
 
 
 ## Technologies
@@ -69,9 +69,9 @@ Temperature Data: Global Historical Climatology Network Daily (GHCN-D), NOAA (Na
    sudo apt-get install postgresql libpq-dev postgresql-client postgresql-client-common
    ```
 
-6. SCP the codes to the master machine and use 'spark-submit' command to run the source file stored in the S3 or use Zeppelin notebooks to run the codes on your web browser. 
+6. SCP the codes to the master machine and use 'spark-submit' command to run the codes or use Zeppelin notebooks to run the codes on your web browser. 
 
-   If you decide to use spark-submit on EMR, here is an instruction article from AWS:  
+   If you decide to use spark-submit on EMR, here is an instruction from AWS:  
 
    https://aws.amazon.com/blogs/big-data/submitting-user-applications-with-spark-submit/
 
