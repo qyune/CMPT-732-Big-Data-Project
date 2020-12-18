@@ -19,7 +19,7 @@ Data Acquisition – Data Wrangling + ETL – Machine Learning – Visualization
 
 ## Data Sources
 Flood Data: Global Active Archive of Large Flood Events, Dartmouth Flood Observatory, University of Colorado.
-Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by NOAA (National Centers for Environmental Information) 
+Temperature Data: Global Historical Climatology Network Daily (GHCN-D), NOAA (National Oceanic and Atmospheric Administration) 
 
 
 ## Technologies
@@ -30,24 +30,54 @@ Temperature Data: ‘Global Historical Climatology Network (GHCN)’  dataset by
 - Version control: GitHub
 
 ## Operating instruction
-- Our project consists of AWS part for data preocessing and web application (Plotly Data with Heroku) part for visualizaion.
+- Our project consists of AWS part for data processing and web application (Plotly Data with Heroku) part for visualization.
+
 - In 'src' directory, all the spark codes we worked on AWS EMR cluster are stored.
-- Code running sequence for data processing: ghcn_etl.py -> page_one.py -> page_two_GHCN.py -> page_two_continent.py -> page_three.py ->  ml_model.py
+
+  Code running sequence: 
+
+  ghcn_etl.py -> page_one.py -> page_two_GHCN.py -> page_two_continent.py -> page_three.py ->  ml_model.py. 
+
+  ghcn_etl.py should be run first since its output would be the input of other scripts.
+
 - In 'floods-detection' directory, you can find all the dashboard related codes and requirements.
 
 - Here are the simple description to operate our data processing part in AWS EMR.
-1. Create an AWS S3 buckets for the storage named as'clitmate-data-732' and load the 'FloodArchiveRaw.csv' and 'country_dict.json' into the bucket.
-   For average temperature datasets, we used S3 open data directly from https://noaa-ghcn-pds.s3.amazonaws.com/index.html#csv/.
-2. Create an AWS EMR clsuter with configuring the applications Spark 3.0.1 and Zeppelin 0.9.0.
+1. Create an AWS S3 bucket for the storage named as 'climate-data-732' and upload 'FloodArchiveRaw.csv' and 'country_dict.json' into the bucket, these files can be found in the 'datasets' directory. Climate data could be visited from AWS S3 open data without being uploaded. Link: https://noaa-ghcn-pds.s3.amazonaws.com/index.html#csv/.
+   
+2. Create your EC2 key pair.
+
+3. Create an AWS EMR cluster with configuring the applications Spark 3.0.1 and Zeppelin 0.9.0.
    - Hardware : Clusters with 1 master node with 2 core nodes with same specification of 4 vCore, 16 GiB memory(m5.xlarge).
-   Using more cluster resources could be encouraged to puruse better performance. 
-3. Several third-party pacakges we deployed in our project need to be installed on the cluster.
-   - We could use bootstrapping to install those packages when launching the cluster
-   (pandas, boto3, psycopg2-binary, sqlalchemy, country-converter, pycountry-convert)
+     Using more cluster resources is encouraged to pursue better performance. 
+
+   - Zeppelin: If you want to use Zeppelin notebooks, you need to do additional security configuration. 
+
+     See: https://sbchapin.github.io/how-to-aws-emr-zeppelin/#/start
+
+4. SSH to the master machine with your EC2 key pair.
+
+5. Use pip to install the following Python packages:
+
+   ```
+   sudo pip pandas, boto3, psycopg2-binary, sqlalchemy, country-converter, pycountry-convert
+   ```
+
+   If you still cannot use PostgreSQL or get error messages regarding psycopg, you may need to:
+
+   ```
+   sudo apt-get install postgresql libpq-dev postgresql-client postgresql-client-common
+   ```
+
+6. SCP the codes to the master machine and use 'spark-submit' command to run the source file stored in the S3 or use Zeppelin notebooks to run the codes on your web browser. 
+
+   If you decide to use spark-submit on EMR, here is an instruction article from AWS:  
+
+   https://aws.amazon.com/blogs/big-data/submitting-user-applications-with-spark-submit/
+
+   It is suggested to specify the parameters shown the examples in this article. Using 'spark-submit' on a small cluster without specifying these parameters may cause the program being halted by yarn because EMR's default values of these parameters may exceed the cluster's actual resources.
+
    
-4. Now you can access to the cluster through AWS CLI with your 'EC2 key pair'.
-6. In the cluster console, we can use'spark-submit' command to run the source file stored in the S3 or we can also run it in the Zeppelin environment.
-7. The output '.csv' file from running 'ghcn_etl.py' will be stored in S3 and that would be the input source for the other processing codes.
 
 
-   
+
